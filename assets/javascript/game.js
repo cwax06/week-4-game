@@ -54,6 +54,6 @@ var startGame = function () {
     // Change the HTML to reflect all of these changes
 
     // Testing Console
-    console.log(getRandom)
-    console.log(targetScore)
 };
+
+console.log(targetScore)
