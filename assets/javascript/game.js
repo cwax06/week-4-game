@@ -37,17 +37,20 @@ var lossCount = 0;
 // ======================================================
 
 // Helper Function for getting random numbers
-var getRandom = function (min, max) {
 
+function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
+var targetScore = getRandom(19, 120)
+console.log(targetScore)
 // Starts the Game (and restarts the game)
 var startGame = function () {
+
 
     // Reset the Current Score
 
     // Set a new Target Score (between 19 and 120)
-    var targetScore = getRandom(19, 120)
 
     // Set different values for each of the crystals (between 1 and 12)
 
@@ -56,4 +59,3 @@ var startGame = function () {
     // Testing Console
 };
 
-console.log(targetScore)
