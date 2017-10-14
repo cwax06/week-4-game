@@ -33,6 +33,15 @@ var targetScore = 0;
 var winCount = 0;
 var lossCount = 0;
 
+// Buttons
+var button =
+    document.createElement("button");
+button.innerHTML = crystal.blue.name;
+
+button.addEventListener("click", function () {
+    alert("test");
+});
+
 // FUNCTIONS
 // ======================================================
 
@@ -51,18 +60,31 @@ function startGame() {
     currentScore = 0;
     // Set a new Target Score (between 19 and 120)
     targetScore = getRandom(19, 120)
-    console.log(targetScore)
 
     // Set different values for each of the crystals (between 1 and 12)
     crystal.blue.value = getRandom(1, 12)
     crystal.green.value = getRandom(1, 12)
     crystal.red.value = getRandom(1, 12)
     crystal.yellow.value = getRandom(1, 12)
-    console.log(crystal)
 
     // Change the HTML to reflect all of these changes
 
     // Testing Console
+    console.log(currentScore)
+    console.log(targetScore)
+    console.log(crystal)
 };
+
+// Scoring
+// function scoring() {
+//     if (currentScore > targetScore) {
+//         lossCount = ++1
+//     } else if (currentScore = targetScore) {
+//         winCount = ++1
+//     };
+// };
+
+
+
 
 startGame()

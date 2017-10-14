@@ -5,20 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <title>Document</title>
+    <link rel="stylesheet" src="assets/css/reset.css">
+    <link rel="stylesheet" src="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Crystal Game</title>
 </head>
 
 <body>
 
+    <img src="assets/images/geologist.png" class="geologist" alt="geologist">
+
+    <h3 id="click-me">TEST</h3>
+
+
+    <script type="text/javascript" src="assets/javascript/game.js">
+
+        $(document).ready(function () {
+
+            // Here we use jQuery to select the header with "click-me" as its ID.
+            // Whenever it is clicked...
+            $("#click-me").on("click", function () {
+
+                // ... we trigger an alert.
+                alert("I've been clicked!");
+            });
+
+        });
+
+    </script>
+
 </body>
-
-<script type="text/javascript" src="assets/javascript/game.js">
-
-    src = "https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity = "sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin = "anonymous" >
-
-</script>
 
 </html>
