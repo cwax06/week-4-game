@@ -66,6 +66,7 @@ function startGame() {
     crystal.green.value = getRandom(1, 12)
     crystal.red.value = getRandom(1, 12)
     crystal.yellow.value = getRandom(1, 12)
+    // crystal.[].value = getRandom(1, 12)
 
     // Change the HTML to reflect all of these changes
 
