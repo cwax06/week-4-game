@@ -42,20 +42,27 @@ function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-var targetScore = getRandom(19, 120)
-console.log(targetScore)
+
 // Starts the Game (and restarts the game)
-var startGame = function () {
+function startGame() {
 
 
     // Reset the Current Score
-
+    currentScore = 0;
     // Set a new Target Score (between 19 and 120)
+    targetScore = getRandom(19, 120)
+    console.log(targetScore)
 
     // Set different values for each of the crystals (between 1 and 12)
+    crystal.blue.value = getRandom(1, 12)
+    crystal.green.value = getRandom(1, 12)
+    crystal.red.value = getRandom(1, 12)
+    crystal.yellow.value = getRandom(1, 12)
+    console.log(crystal)
 
     // Change the HTML to reflect all of these changes
 
     // Testing Console
 };
 
+startGame()
