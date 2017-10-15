@@ -35,13 +35,7 @@ var lossCount = 0;
 
 $(document).ready(function () {
     startGame()
-    // Here we use jQuery to select the header with "click-me" as its ID.
-    // Whenever it is clicked...
-    $("#click-me").on("click", function () {
 
-        // ... we trigger an alert.
-        alert("I've been clicked!");
-    });
 
     // Buttons
     var blueClick =
@@ -49,6 +43,7 @@ $(document).ready(function () {
     blueClick.addEventListener("click", function () {
         currentScore += crystal.blue.value
         document.getElementById("current").innerText = currentScore;
+        checkScore()
     });
 
     var redClick =
@@ -56,6 +51,7 @@ $(document).ready(function () {
     redClick.addEventListener("click", function () {
         currentScore += crystal.red.value
         document.getElementById("current").innerText = currentScore;
+        checkScore()
     });
 
     var greenClick =
@@ -63,6 +59,7 @@ $(document).ready(function () {
     greenClick.addEventListener("click", function () {
         currentScore += crystal.green.value
         document.getElementById("current").innerText = currentScore;
+        checkScore()
     });
 
     var yellowClick =
@@ -70,6 +67,7 @@ $(document).ready(function () {
     yellowClick.addEventListener("click", function () {
         currentScore += crystal.yellow.value
         document.getElementById("current").innerText = currentScore;
+        checkScore()
     });
 
 });
@@ -103,7 +101,7 @@ function startGame() {
     crystal.green.value = getRandom(1, 12)
     crystal.red.value = getRandom(1, 12)
     crystal.yellow.value = getRandom(1, 12)
-    // crystal.[].value = getRandom(1, 12)
+
 
     // Change the HTML to reflect all of these changes
 
@@ -113,7 +111,17 @@ function startGame() {
     console.log(crystal)
 };
 
-// function checkScore()
+function checkScore() {
+    if (currentScore === targetScore) {
+        winCount++;
+        document.getElementById("wins").innerText = winCount;
+        startGame()
+    } else if (currentScore > targetScore) {
+        lossCount++;
+        document.getElementById("losses").innerText = lossCount;
+        startGame()
+    }
+};
 
 // Scoring
 // function scoring() {
