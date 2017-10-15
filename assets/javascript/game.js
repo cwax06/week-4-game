@@ -33,14 +33,49 @@ var targetScore = 0;
 var winCount = 0;
 var lossCount = 0;
 
-// Buttons
-var button =
-    document.createElement("button");
-button.innerHTML = crystal.blue.name;
+$(document).ready(function () {
+    startGame()
+    // Here we use jQuery to select the header with "click-me" as its ID.
+    // Whenever it is clicked...
+    $("#click-me").on("click", function () {
 
-button.addEventListener("click", function () {
-    alert("test");
+        // ... we trigger an alert.
+        alert("I've been clicked!");
+    });
+
+    // Buttons
+    var blueClick =
+        document.getElementById("blueCrystal");
+    blueClick.addEventListener("click", function () {
+        currentScore += crystal.blue.value
+        document.getElementById("current").innerText = currentScore;
+    });
+
+    var redClick =
+        document.getElementById("redCrystal");
+    redClick.addEventListener("click", function () {
+        currentScore += crystal.red.value
+        document.getElementById("current").innerText = currentScore;
+    });
+
+    var greenClick =
+        document.getElementById("greenCrystal");
+    greenClick.addEventListener("click", function () {
+        currentScore += crystal.green.value
+        document.getElementById("current").innerText = currentScore;
+    });
+
+    var yellowClick =
+        document.getElementById("yellowCrystal");
+    yellowClick.addEventListener("click", function () {
+        currentScore += crystal.yellow.value
+        document.getElementById("current").innerText = currentScore;
+    });
+
 });
+
+
+
 
 // FUNCTIONS
 // ======================================================
@@ -60,6 +95,8 @@ function startGame() {
     currentScore = 0;
     // Set a new Target Score (between 19 and 120)
     targetScore = getRandom(19, 120)
+    document.getElementById("targetSpan").innerText = targetScore;
+    document.getElementById("current").innerText = currentScore;
 
     // Set different values for each of the crystals (between 1 and 12)
     crystal.blue.value = getRandom(1, 12)
@@ -76,6 +113,8 @@ function startGame() {
     console.log(crystal)
 };
 
+// function checkScore()
+
 // Scoring
 // function scoring() {
 //     if (currentScore > targetScore) {
@@ -88,4 +127,3 @@ function startGame() {
 
 
 
-startGame()

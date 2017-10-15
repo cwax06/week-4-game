@@ -10,6 +10,7 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Crystal Game</title>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 
 <body>
@@ -18,22 +19,25 @@
 
     <h3 id="click-me">TEST</h3>
 
+    <div>
+        Target Score:
+        <span id="targetSpan"></span>
+    </div>
 
-    <script type="text/javascript" src="assets/javascript/game.js">
+    <div>
+        Current Score:
+        <span id="current"></span>
+    </div>
 
-        $(document).ready(function () {
 
-            // Here we use jQuery to select the header with "click-me" as its ID.
-            // Whenever it is clicked...
-            $("#click-me").on("click", function () {
+    <img src="assets/images/blue.jpeg" id="blueCrystal" height="200px" width="200px">
+    <img src="assets/images/red_crystal.jpg" id="redCrystal" height="200px" width="200px">
+    <img src="assets/images/green_crystal..jpg" id="greenCrystal" height="200px" width="200px">
+    <img src="assets/images/yello_crystal.jpg" id="yellowCrystal" height="200px" width="200px">
 
-                // ... we trigger an alert.
-                alert("I've been clicked!");
-            });
 
-        });
 
-    </script>
+
 
 </body>
 
